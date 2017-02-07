@@ -1,1 +1,2 @@
-system.greeting=Welcome to KCloud!
+system:
+  greeting: Welcome to KCloud!
