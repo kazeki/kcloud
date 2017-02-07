@@ -13,7 +13,7 @@ public class GreetingController {
 		System.out.println("GreetingController >> Created");
 	}
 	
-	//通过Environment注入获取配置信息(Environment.getProperty)，包括本地和远程配置
+	//通过Environment注入获取配置信息(Environment.getProperty)
 //	@Autowired
 	protected Environment environment;
 	@Autowired
@@ -21,10 +21,12 @@ public class GreetingController {
 		this.environment = environment;
 	    System.out.println("GreetingController >> system.greeting: " 
 		        + this.environment.getProperty("system.greeting"));
+	    System.out.println("GreetingController >> server.port: " 
+		        + environment.getProperty("server.port"));
 	}
 
-	//通过@Value注入获取配置信息，包括本地和远程配置
-	@Value("${system.greeting}")
+	//通过@Value注入获取配置信息，如果配置缺失可能导致应用启动失败
+//	@Value("${system.greeting}")
 	protected String greeting="Default Hello";
 	
 	@RequestMapping("/")
@@ -33,6 +35,7 @@ public class GreetingController {
 		        + environment.getProperty("system.greeting"));
 		System.out.println("GreetingController >> server.port: " 
 		        + environment.getProperty("server.port"));
-		return greeting;
+		//return greeting;
+		return environment.getProperty("system.greeting");
 	}
 }

@@ -1,15 +1,2 @@
-server:
-  port: 80
-spring:
-  application:
-    name: kcloud-home
-  cloud:
-    config:
-      uri: http://localhost:${config.port:8888}
-      name: kcloud-home
-      profile: ${config.profile:dev}
-  config:
-    name: application
-logging:
-  level:
-    org.springframework.boot: ERROR
+system:
+  greeting: Welcome to KCloud! from application

@@ -19,6 +19,8 @@ public class KcloudHomeApplication {
 	void setEnviroment(Environment env) {
 	    System.out.println("KcloudHomeApplication >> system.greeting: " 
 		        + env.getProperty("system.greeting"));
+	    System.out.println("KcloudHomeApplication >> server.port: " 
+		        + env.getProperty("server.port"));
 	}
 	
 	public static void main(String[] args) {
