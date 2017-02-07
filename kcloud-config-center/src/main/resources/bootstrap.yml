@@ -1,0 +1,6 @@
+spring:
+  config:
+    name: application
+logging:
+  level:
+    org.springframework.boot: DEBUG
