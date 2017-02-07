@@ -1,2 +1,4 @@
 system:
   greeting: Welcome to KCloud!
+server:
+  port: 85
