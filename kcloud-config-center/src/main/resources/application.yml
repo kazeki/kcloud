@@ -1,12 +1,12 @@
 server:
   display-name: kcloud-config-center
-  port:8888
+  port: 8888
 spring:
   application:
     name: kcloud-config-center
-	cloud:
-		config:
-			server:
-				git:
-					uri:https://github.com/kazeki/kcloud.git
-					searchPaths:kcloudConfig
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kazeki/kcloud
+          searchPaths: kcloudConfig

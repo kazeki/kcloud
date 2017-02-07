@@ -19,6 +19,7 @@
 	</organization>
 	<modules>
 		<module>kcloud-config-center</module>
+		<module>kcloud-home</module>
 	</modules>
 	<build>
 		<plugins>
