@@ -2,3 +2,6 @@ system:
   greeting: Welcome to KCloud!
 server:
   port: 85
+logging:
+  level:
+    org.springframework.boot: DEBUG
