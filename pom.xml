@@ -19,7 +19,9 @@
 	</organization>
 	<modules>
 		<module>kcloud-config-center</module>
+		<module>kcloud-eureka-server</module>
 		<module>kcloud-home</module>
+		<module>kcloud-system-service</module>
 	</modules>
 	<build>
 		<plugins>
