@@ -1,7 +1,9 @@
-system:
-  greeting: Welcome to KCloud!  - by Config Center
-server:
-  port: 9000
 logging:
   level:
     org.springframework.boot: INFO
+    
+server:
+  port: 9999
+
+system:
+  greeting: Welcome to KCloud!  from Config Center

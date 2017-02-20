@@ -1,2 +1,9 @@
+logging:
+  level:
+    org.springframework.boot: INFO
+    
+server:
+  port: 9999
+
 system:
   greeting: Welcome to KCloud! from application

@@ -1,2 +1,15 @@
-system:
-  greeting: Welcome to KCloud! from application
+logging:
+  level:
+    org.springframework.boot: INFO
+    
+server:
+  port: 7777
+  
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

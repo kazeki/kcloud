@@ -1,6 +1,5 @@
 spring:
+  application:
+    name: kcloud-home
   config:
     name: application
-logging:
-  level:
-    org.springframework.boot: DEBUG
