@@ -4,4 +4,4 @@ server:
   port: 9000
 logging:
   level:
-    org.springframework.boot: DEBUG
+    org.springframework.boot: INFO
