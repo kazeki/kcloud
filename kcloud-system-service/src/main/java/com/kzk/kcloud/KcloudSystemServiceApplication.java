@@ -21,23 +21,28 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @RestController
 public class KcloudSystemServiceApplication {
+	@Autowired
+	Environment env;
 	
 	@RequestMapping("/")
-    public String home() {
-        return "Hello world";
+    public String home() throws Exception {
+		if(System.currentTimeMillis()%2==0){
+			throw new Exception("Error for test");
+		}
+        return "Hello this is KcloudSystemServiceApplication-" + env.getProperty("server.port");
     }
 	
 	public KcloudSystemServiceApplication(){
 		System.out.println("KcloudSystemServiceApplication >> Created");
 	}
 
-	@Autowired
-	void setEnviroment(Environment env) {
-	    System.out.println("KcloudSystemServiceApplication >> system.greeting: " 
-		        + env.getProperty("system.greeting"));
-	    System.out.println("KcloudSystemServiceApplication >> server.port: " 
-		        + env.getProperty("server.port"));
-	}
+//	@Autowired
+//	void setEnviroment(Environment env) {
+//	    System.out.println("KcloudSystemServiceApplication >> system.greeting: " 
+//		        + env.getProperty("system.greeting"));
+//	    System.out.println("KcloudSystemServiceApplication >> server.port: " 
+//		        + env.getProperty("server.port"));
+//	}
 	
 	public static void main(String[] args) {
 		System.out.println("Before Run");

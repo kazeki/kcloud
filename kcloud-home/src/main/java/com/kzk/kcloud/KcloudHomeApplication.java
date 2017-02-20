@@ -3,13 +3,26 @@ package com.kzk.kcloud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
+import org.springframework.web.client.RestTemplate;
+
 
 /**
  * @author kazeki
  */
+
+@EnableFeignClients
+//@EnableCircuitBreaker
 @SpringBootApplication
+@EnableDiscoveryClient
 public class KcloudHomeApplication {
+	@Bean
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
+	}
 	
 	public KcloudHomeApplication(){
 		System.out.println("KcloudHomeApplication >> Created");

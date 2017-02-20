@@ -7,3 +7,8 @@ server:
 
 system:
   greeting: Welcome to KCloud! from application
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka/

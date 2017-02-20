@@ -3,10 +3,14 @@ logging:
     org.springframework.boot: INFO
 
 server:
-  port: 6666
+  port: 68
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:7777/eureka/
-      
+    healthcheck:
+      enabled： true    #开启健康检查（需要spring-boot-starter-actuator依赖）
+  instance:
+    lease-renewal-interval-in-seconds: 5    #续约更新时间间隔（默认30秒）
+    lease-expiration-duration-in-seconds: 15    #续约到期时间（默认90秒）  
