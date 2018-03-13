@@ -33,5 +33,7 @@ system:
   
 eureka:
   client:
+    registerWithEureka: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:7777/eureka/
