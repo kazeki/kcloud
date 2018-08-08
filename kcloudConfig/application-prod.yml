@@ -1,0 +1,21 @@
+# 通过访问 /info 可以获得以下自定义数据
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+  build:
+    artifactId: @project.artifactId@
+    version: @project.version@
+  poweredBy: kazeki-prod
+
+ureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://prod-eureka-server:8761/eureka/
+    healthcheck:
+      enabled： true    #开启健康检查（需要spring-boot-starter-actuator依赖）
+  instance:
+    lease-renewal-interval-in-seconds: 30    #续约更新时间间隔（默认30秒）
+    lease-expiration-duration-in-seconds: 90    #续约到期时间（默认90秒）
