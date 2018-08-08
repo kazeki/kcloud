@@ -27,12 +27,6 @@ endpoints:
 
 # 通过访问 /info 可以获得以下自定义数据
 info:
-  app:
-    name: ${spring.application.name}
-    version: 1.0.0
-  build:
-    artifactId: @project.artifactId@
-    version: @project.version@
   poweredBy: kazeki-dev
 
 eureka:
