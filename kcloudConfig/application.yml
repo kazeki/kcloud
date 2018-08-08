@@ -31,7 +31,7 @@ info:
     name: ${spring.application.name}
     version: 1.0.0
   build:
-    artifactId: "@project.artifactId@"
-    version: "@project.version@"
+    artifactId: '@project.artifactId@'
+    version: '@project.version@'
   poweredBy: kazeki
 
