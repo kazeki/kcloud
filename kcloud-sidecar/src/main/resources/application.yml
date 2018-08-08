@@ -29,18 +29,20 @@ endpoints:
     sensitive: false
 
 server:
-  port: 7777
+  port: 5678
+
+sidecar:
+  port: 8081
+  health-uri: http://localhost:8081/sidecar/health.json
 
 eureka:
-  instance:
-    perferIpAddress: true
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-    hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    enable-self-preservation: false            #是否开启自我保护，开启时将不会剔除无效节点
-    eviction-interval-timer-in-ms: 10000     #清理无效节点的时间间隔（单位毫秒，默认是60000）
+      defaultZone: http://localhost:7777/eureka/
+    healthcheck:
+      enabled： true    #开启健康检查（需要spring-boot-starter-actuator依赖）
+  instance:
+      lease-renewal-interval-in-seconds: 5    #续约更新时间间隔（默认30秒）
+      lease-expiration-duration-in-seconds: 15    #续约到期时间（默认90秒）

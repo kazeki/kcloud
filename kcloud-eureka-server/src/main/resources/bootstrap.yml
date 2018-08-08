@@ -1,11 +1,11 @@
 spring:
   application:
     name: kcloud-eureka-server
-  cloud:
-    config:
-      uri: http://localhost:${config.port:8888}
-      name: ${config.name:${spring.application.name}}
-      profile: ${config.profile:dev}
-      label: ${config.label:master}
-      username: kazeki
-      password: kazeki
+  #cloud:
+    #config:
+      #uri: http://localhost:${config.port:8888}
+      #name: ${config.name:${spring.application.name}}
+      #profile: ${config.profile:dev}
+      #label: ${config.label:master}
+      #username: kazeki
+      #password: kazeki

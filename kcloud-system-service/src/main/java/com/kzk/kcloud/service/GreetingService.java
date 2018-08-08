@@ -15,23 +15,23 @@ import com.kzk.kcloud.model.User;
 public class GreetingService {
 	@Autowired
 	private Environment env;
-	
+
 	@Autowired
 	private CounterService counterService;
-	
+
 	@RequestMapping(value="/greet",method=RequestMethod.GET)
     public String greet(@RequestParam(defaultValue="",required=false) String name) throws Exception {
 		//TODO:无论counterService.increment多少次，/metric中永远是1？需要查明原因
 		counterService.increment("greet.access.total");
 		//模拟故障
-		if(System.currentTimeMillis()%2==0){
-			counterService.increment("greet.access.failed");
-			throw new Exception("Error for test");
-		}
+//		if(System.currentTimeMillis()%2==0){
+//			counterService.increment("greet.access.failed");
+//			throw new Exception("Error for test");
+//		}
 		counterService.increment("greet.access.success");
         return "Hello "+name+"! This is kcloud-system-service-" + env.getProperty("server.port");
     }
-	
+
 	@RequestMapping(value="/greet",method=RequestMethod.POST)
     public String greet(@RequestBody User user) throws Exception {
 		System.out.println("greet(@RequestBody User user)");

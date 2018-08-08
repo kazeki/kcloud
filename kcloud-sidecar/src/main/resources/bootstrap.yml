@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kcloud-home
+    name: ${config.profile:kcloud-sidecar}
   #cloud:
     #config:
       #uri: http://localhost:${config.port:8888}
