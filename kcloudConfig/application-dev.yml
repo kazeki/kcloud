@@ -8,7 +8,7 @@ info:
     version: '@project.version@'
   security: ${management.security.enabled}
   configfile: git-application-dev
-  fromApplicationDev: Hi
+  fromApplicationDev: Hihaha
 
 #logging:
 #  level:
@@ -41,7 +41,7 @@ info:
 #    registerWithEureka: true
 #    fetchRegistry: true
 #    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://localhost:8762/eureka/
 #    healthcheck:
 #      enabled： true    #开启健康检查（需要spring-boot-starter-actuator依赖）
 #  instance:
