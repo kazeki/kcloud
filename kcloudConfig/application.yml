@@ -8,4 +8,7 @@ info:
     version: '@project.version@'
   security: ${management.security.enabled}
   configfile: git-application
+management:
+  security:
+    enabled: false
 

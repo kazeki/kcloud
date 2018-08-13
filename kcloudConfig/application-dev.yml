@@ -9,9 +9,6 @@ info:
   security: ${management.security.enabled}
   configfile: git-application-dev
 
-management:
-  security:
-    enabled: false
 logging:
   level:
     org.springframework.boot: info
