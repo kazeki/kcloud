@@ -8,7 +8,7 @@ info:
     version: '@project.version@'
   security: ${management.security.enabled}
   configfile: git-application-dev
-  fromApplicationDev: Hihaha
+  fromApplicationDev: HihahaJJJ
 
 #logging:
 #  level:
