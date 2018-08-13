@@ -2,6 +2,8 @@
 info:
   app:
     name: ${spring.application.name}
-    version: 1.0.0
-  poweredBy: kazeki
+    profile: ${spring.profiles.active}
+  build:
+    artifactId: '@project.artifactId@'
+    version: '@project.version@'
 
