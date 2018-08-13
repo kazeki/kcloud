@@ -17,4 +17,4 @@ spring:
       fail-fast: true
       discovery:
         enabled: true
-        serviceId: kcloud-config-center
+        serviceId: KCLOUD-CONFIG-CENTER
