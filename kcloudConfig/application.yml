@@ -6,4 +6,5 @@ info:
   build:
     artifactId: '@project.artifactId@'
     version: '@project.version@'
+  security: ${management.security.enabled}
 
