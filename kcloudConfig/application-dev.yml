@@ -1,3 +1,6 @@
+management:
+  security:
+    enabled: false
 logging:
   level:
     org.springframework.boot: info
@@ -24,11 +27,6 @@ endpoints:
     sensitive: true
   beans: #显示所有Spring Bean的信息
     sensitive: true
-
-# 通过访问 /info 可以获得以下自定义数据
-info:
-  poweredBy: kazeki-dev
-
 eureka:
   client:
     registerWithEureka: true

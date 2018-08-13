@@ -1,0 +1,20 @@
+eureka:
+  instance:
+    #perferIpAddress: true
+    #instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false            #是否开启自我保护，开启时将不会剔除无效节点
+    eviction-interval-timer-in-ms: 10000     #清理无效节点的时间间隔（单位毫秒，默认是60000）
+spring:
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: config-center
