@@ -11,12 +11,15 @@ spring:
     show-sql: true
 druid:
   servlet:
-    url-mappings: "/druid/*"
+    url-mappings: "/druid2/*"
     init-parameters:
       login-username: kazeki
       login-password: kazeki
       allow:
       deny:
+  webfilter:
+    init-parameters:
+      exclusions: "*.png,*.woff,*.js,*.css,/druid2/*"
 #  datasource:
 #    type: com.alibaba.druid.pool.DruidDataSource
 #    driver-class-name: com.mysql.jdbc.Driver
