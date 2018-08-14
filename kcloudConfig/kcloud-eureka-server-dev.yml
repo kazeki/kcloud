@@ -1,3 +1,14 @@
+# 通过访问 /info 可以获得以下自定义数据
+info:
+  app:
+    name: ${spring.application.name}
+    profile: ${spring.profiles.active}
+  build:
+    artifactId: '@project.artifactId@'
+    version: '@project.version@'
+  security: ${management.security.enabled}
+  configfile: git-KcloudEurekaServer
+  fromKcloudEurekaServer: Hi
 eureka:
   instance:
     #perferIpAddress: true

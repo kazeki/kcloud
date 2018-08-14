@@ -7,5 +7,5 @@ info:
     artifactId: '@project.artifactId@'
     version: '@project.version@'
   security: ${management.security.enabled}
-  configfile: git-application
+  configfile: git-KcloudConfigCenter
   fromKcloudConfigCenter: Hi
