@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/kcloud_system?useUnicode=true&characterEncoding=utf-8
+    username: kazeki
+    password: kazeki
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+druid:
+  servlet:
+    url-mappings: "/druid/*"
+    init-parameters:
+      login-username: kazeki
+      login-password: kazeki
+      allow:
+      deny:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/kcloud_system?useUnicode=true&characterEncoding=utf-8
+#    username: kazeki
+#    password: kazeki
+#    filters: wall,stat
+#    initialSize: 10
+#    minIdle: 10
+#    maxActive: 50
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 'x' FROM DUAL
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxPoolPreparedStatementPerConnectionSize: 20
