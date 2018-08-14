@@ -1,16 +1,17 @@
+server:
+  port: 8769
 spring:
   application:
     name: kcloud-config-center
-  config:
-    name: application
+  profiles:
+    active: dev
   cloud:
     config:
-      name: ${config.name:${spring.application.name}}
-      profile: ${config.profile:dev}
-      label: ${config.label:master}
+#      name: ${spring.application.name}
+#      profile: ${spring.profiles:active}
+      label: master
       server:
         bootstrap: true #如果配置服务器自身需要从远程获取配置，则设为True
         git:
-          #uri: https://github.com/kazeki/kcloud.git
           uri: git@github.com:kazeki/kcloud.git
           searchPaths: kcloudConfig

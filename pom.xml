@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.0.BUILD-SNAPSHOT</version>
-		<relativePath/>
-	</parent>
+    <groupId>com.kzk</groupId>
 	<artifactId>kcloud</artifactId>
 	<version>0.0.0.BUILD-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>kcloud</name>
-	<description>kcloud</description>
-	<url>https://projects.spring.io/spring-cloud/</url>
-	<organization>
-		<name>kcloud</name>
-		<url>https://www.spring.io</url>
-	</organization>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.3.RELEASE</version>
+        <!-- lookup parent from repository -->
+        <relativePath/>
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
+    </properties>
 	<modules>
 		<module>kcloud-config-center</module>
 		<module>kcloud-eureka-server</module>
@@ -24,7 +25,68 @@
 		<module>kcloud-gateway</module>
 		<module>kcloud-system-service</module>
 	</modules>
-	<build>
+    <dependencies>
+        <!-- 提供应用健康状态监控功能 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- ？ -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+        <!-- 提供远程配置支持 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!-- 服务发现: Eureka Server -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        </dependency>
+        <!-- 测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Jolokia 是一个利用JSON通过HTTP实现JMX远程管理的额开源组件-->
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
+        </dependency>
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!--
+            Spring Boot Maven plugin的5个Goals：
+            spring-boot:repackage，默认goal。在mvn package之后，再次打包可执行的jar/war，同时保留mvn package生成的jar/war为.origin
+            spring-boot:run，运行Spring Boot应用
+            spring-boot:start，在mvn integration-test阶段，进行Spring Boot应用生命周期的管理
+            spring-boot:stop，在mvn integration-test阶段，进行Spring Boot应用生命周期的管理
+            spring-boot:build-info，生成Actuator使用的构建信息文件build-info.properties
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+	<!--<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -43,8 +105,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
-	<repositories>
+	</build>-->
+	<!--<repositories>
 		<repository>
 			<id>spring-snapshots</id>
 			<name>Spring Snapshots</name>
@@ -95,5 +157,5 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories>-->
 </project>
