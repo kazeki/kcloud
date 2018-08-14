@@ -25,7 +25,7 @@ eureka:
 spring:
   cloud:
     config:
-      fail-fast: true
+      fail-fast: false
       discovery:
         enabled: true
         serviceId: KCLOUD-CONFIG-CENTER
