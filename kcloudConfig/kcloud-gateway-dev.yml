@@ -1,0 +1,10 @@
+zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    kcloud-system-service:
+      path: /api/system/**
+      serviceId: kcloud-system-controller
+      # sensitiveHeaders 需要过滤的敏感头部，默认为 Cookie，Set-Cookie，Authorization；此处特意设置为空覆盖默认值
+      sensitiveHeaders:
