@@ -5,6 +5,19 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/kcloud_system?useUnicode=true&characterEncoding=utf-8
     username: kazeki
     password: kazeki
+    filters: wall,stat
+    initialSize: 101
+    minIdle: 101
+    maxActive: 501
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x' FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
   jpa:
     hibernate:
       ddl-auto: update
@@ -29,6 +42,13 @@ spring:
       max-idle: 8
       # 连接池中的最小空闲连接
       min-idle: 0
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: kcloud
+    password: kcloud
+    publisher-confirms: true
+    virtual-host: /
 druid:
   servlet:
     url-mappings: "/druid/*"
