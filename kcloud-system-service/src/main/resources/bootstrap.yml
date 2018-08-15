@@ -4,7 +4,7 @@ spring:
   application:
     name: kcloud-system-service
   profiles:
-    active: ${config.profile:dev}
+    active: dev
   cloud:
     config:
       uri: http://localhost:8769
