@@ -1,3 +1,6 @@
+management:
+  security:
+    enabled: false
 # 通过访问 /info 可以获得以下自定义数据
 info:
   app:
@@ -44,3 +47,10 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     healthcheck:
       enabled： true    #开启健康检查（需要spring-boot-starter-actuator依赖）
+spring:
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 默认为0.1
+      percentage: 1.0

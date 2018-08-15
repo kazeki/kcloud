@@ -1,6 +1,3 @@
-management:
-  security:
-    enabled: false
 # 通过访问 /info 可以获得以下自定义数据
 info:
   app:

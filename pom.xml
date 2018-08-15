@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
     <groupId>com.kzk</groupId>
 	<artifactId>kcloud</artifactId>
-	<version>0.0.0.BUILD-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,6 +21,7 @@
 	<modules>
 		<module>kcloud-config-center</module>
 		<module>kcloud-eureka-server</module>
+        <module>kcloud-zipkin-server</module>
 		<module>kcloud-home</module>
 		<module>kcloud-gateway</module>
 		<module>kcloud-system-service</module>

@@ -1,16 +1,11 @@
 server:
-  port: 9001
+  port: 9411
 spring:
   application:
-    name: kcloud-system-service
+    name: kcloud-zipkin-server
   profiles:
     active: dev
   cloud:
     config:
       uri: http://localhost:8769
       fail-fast: false
-
-
-
-
-
