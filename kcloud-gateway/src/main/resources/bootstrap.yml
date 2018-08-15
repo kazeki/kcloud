@@ -7,7 +7,5 @@ spring:
     active: ${config.profile:dev}
   cloud:
     config:
+      uri: http://localhost:8769
       fail-fast: false
-      discovery:
-        enabled: true
-        service-id: kcloud-config-center
