@@ -1,9 +1,7 @@
-package com.kzk.kcloud.service;
+package com.kzk.kcloud.controller;
 
-import com.kzk.kcloud.model.User;
-import com.kzk.kcloud.service.fallback.SystemServiceFallback;
+import com.kzk.kcloud.controller.fallback.SystemServiceFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

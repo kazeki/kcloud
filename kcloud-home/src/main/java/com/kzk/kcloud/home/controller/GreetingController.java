@@ -1,6 +1,6 @@
 package com.kzk.kcloud.home.controller;
 
-import com.kzk.kcloud.service.NetappService;
+import com.kzk.kcloud.controller.NetappService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kzk.kcloud.model.User;
-import com.kzk.kcloud.service.SystemService;
+import com.kzk.kcloud.controller.SystemService;
 
 @RestController
 public class GreetingController {

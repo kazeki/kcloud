@@ -1,0 +1,13 @@
+server:
+  port: 80
+spring:
+  application:
+    name: kcloud-gateway
+  profiles:
+    active: ${config.profile:dev}
+  cloud:
+    config:
+      fail-fast: false
+      discovery:
+        enabled: true
+        service-id: kcloud-config-center

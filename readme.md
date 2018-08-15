@@ -16,7 +16,10 @@ config: 8769
 
 
 ## 目前的问题： ##
+### /refresh问题 ###
 如果使用配置中心的/refresh端口刷新配置中心的配置，配置中心会从服务注册中心下线，并且配置更新完之后无法重新上线。
 （日志显示EurekaClient被shutdown，之后没有启动的日志）
 貌似当EurekaServer的spring-cloud-config-fail-fast=false的时候，虽然配置中心服务已经下线，但是仍然可以通过注册中心的/refresh端点刷新注册中心的配置，反之如果是true，则刷新时会出现500错误
 
+### Druid配置问题 ###
+想要通过ConfigurationProperties来配置DruidDataSource总是启动失败。
