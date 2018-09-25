@@ -16,6 +16,7 @@ info:
 logging:
   level:
     org.springframework.boot: info
+    org.springframework.security: debug
 endpoints:
   health: #展示系统的各种组件运行状态、硬盘使用情况
     sensitive: true
