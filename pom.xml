@@ -25,6 +25,7 @@
 		<module>kcloud-home</module>
 		<module>kcloud-gateway</module>
 		<module>kcloud-system-service</module>
+        <module>kcloud-uaa-server</module>
 	</modules>
     <dependencies>
         <!-- 提供应用健康状态监控功能 -->

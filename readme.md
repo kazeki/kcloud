@@ -1,6 +1,7 @@
 ## 端口分配 ##
 eureka: 8761  
 config: 8769  
+uaa: 8762
 
 ## 基础架构 ##
 不同环境（开发环境、测试环境、生产环境）都应该有独立的配置中心(ConfigCenter)、服务注册中心（EurekaServer）；

@@ -1,6 +1,7 @@
 package com.kzk.kcloud.controller;
 
 import com.kzk.kcloud.repository.ModuleRepository;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -16,7 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 public class ModuleController {
-
+    @Autowired
+    private AmqpTemplate amqpTemplate;
     @Autowired
     ModuleRepository moduleRepository;
     @Autowired
@@ -37,6 +39,7 @@ public class ModuleController {
     @RequestMapping(value="/module/clearAllCache",method=RequestMethod.GET)
     @CacheEvict(value = "moduleCache" , allEntries = true, beforeInvocation = true)
     public Object clearAllCache(){
+        amqpTemplate.convertAndSend("testmq", new Date().toString());
         redisTemplate.boundListOps("action").expire(30, TimeUnit.SECONDS);
         redisTemplate.boundListOps("action").leftPush(new Date().toString());
         return redisTemplate.boundListOps("action").range(0,-1);

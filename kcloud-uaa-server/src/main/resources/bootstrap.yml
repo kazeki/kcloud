@@ -1,0 +1,28 @@
+server:
+  port: 8762
+  context-path: /uaa
+spring:
+  application:
+    name: kcloud-uaa-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8769
+      fail-fast: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spsec
+    username: kazeki
+    password: kazeki
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    org.springframework.security: debug
+
+
+
+
