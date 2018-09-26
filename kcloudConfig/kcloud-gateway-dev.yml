@@ -13,3 +13,4 @@ zuul:
       serviceId: kcloud-uaa-server
       # sensitiveHeaders 需要过滤的敏感头部，默认为 Cookie，Set-Cookie，Authorization；此处特意设置为空覆盖默认值
       sensitiveHeaders:
+
