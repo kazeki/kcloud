@@ -24,3 +24,6 @@ uaa: 8762
 
 ### Druid配置问题 ###
 想要通过ConfigurationProperties来配置DruidDataSource总是启动失败。
+
+
+xh
